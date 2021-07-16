@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import NextLink from 'next/link';
+import GitHubService from '../../pages/api/github'
 
 const BASE_URL = 'http://alurakut.vercel.app/';
 const v = '1';
@@ -16,10 +17,17 @@ function Link({ href, children, ...props }) {
   )
 }
 
+
 // ================================================================================================================
 // Menu
 // ================================================================================================================
-export function AlurakutMenu({ githubUser }) {
+export function AlurakutMenu({ props }) {
+  const [username, setUsername] = React.useState([]);
+
+  useEffect(() => {
+    GitHubService.getUsername().then((userName) => setUsername(userName));
+  }, []);
+
   const [isMenuOpen, setMenuState] = React.useState(false);
   return (
     <AlurakutMenu.Wrapper isMenuOpen={isMenuOpen}>
@@ -48,7 +56,7 @@ export function AlurakutMenu({ githubUser }) {
           {!isMenuOpen && <img src={`${BASE_URL}/icons/menu-closed.svg?v=${v}`} />}
         </button>
       </div>
-      <AlurakutMenuProfileSidebar githubUser={githubUser} />
+      <AlurakutMenuProfileSidebar username={username.login} />
     </AlurakutMenu.Wrapper>
   )
 }
@@ -162,15 +170,18 @@ AlurakutMenu.Logo = styled.img`
   height: 34px;
 `;
 
-function AlurakutMenuProfileSidebar({ githubUser }) {
+
+function AlurakutMenuProfileSidebar({ username }) {
+
+
   return (
-    <div className="alurakutMenuProfileSidebar">
+    <div className="alurakutMenuProfileSidebar" username={username}>
       <div>
-        <img src={`https://github.com/${githubUser}.png`} style={{ borderRadius: '8px' }} />
+        <img src={`https://github.com/${username}.png`} style={{ borderRadius: '8px' }} />
         <hr />
         <p>
-          <a className="boxLink" href={`/user/${githubUser}`}>
-            @{githubUser}
+          <a className="boxLink" href={`/user/${username}`}>
+            @{username}
           </a>
         </p>
         <hr />

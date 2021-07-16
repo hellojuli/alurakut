@@ -32,6 +32,15 @@ const Box = styled.div`
     color: #ffffff;
     margin-bottom: 20px;
   }
+  .linkTitle {
+    font-family: Verdana;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: #2E7BB4;
+    margin-top: 13px
+  }
   hr {
     margin-top: 12px;
     margin-bottom: 8px;
