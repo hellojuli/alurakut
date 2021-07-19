@@ -332,7 +332,7 @@ OrkutNostalgicIconSet.List = styled.ul`
 const AlurakutLoginScreen = css`
   :root {
     --backgroundPrimary: #D9E6F6;
-    --backgroundSecondary: #F1F9FE;
+    --backgroundSecondary: #202024;
     --backgroundTertiary: #FFFFFF;
     --backgroundQuarternary: #BBCDE8;
     --colorPrimary: #2E7BB4;
@@ -365,7 +365,7 @@ const AlurakutLoginScreen = css`
     }
     .logoArea {
       grid-area: logoArea;
-      background-color: var(--backgroundTertiary);
+      background-color: var(--backgroundSecondary);
       border-radius: var(--commonRadius);
       padding: var(--gutter);
       text-align: center;
@@ -379,6 +379,7 @@ const AlurakutLoginScreen = css`
         min-height: 368px;
       }
       p {
+        color: #ffffff;
         font-size: 12px;
         line-height: 1.2;
         &:not(:last-child) {
@@ -420,6 +421,7 @@ const AlurakutLoginScreen = css`
           }
         }
         p {
+          color: #ffffff;
           font-size: 14px;
         }
         a {
@@ -442,20 +444,22 @@ const AlurakutLoginScreen = css`
           border: 0;
           padding: 12px;
           border-radius: var(--commonRadius);
-          background-color: var(--colorPrimary);
+          background-color: #7e489c;
           color: var(--textSecondaryColor);
         }
       }
     }
     .footerArea {
       grid-area: footerArea;
-      background-color: var(--backgroundQuarternary);
+      background-color: var(--backgroundSecondary);
       border-radius: var(--commonRadius);
       padding: 8px;
       p {
+        color: #ffffff;
         font-size: 12px;
         text-align: center;
         a {
+          color: #ffffff;
           text-decoration: none;
           color: var(--colorPrimary);
         }
