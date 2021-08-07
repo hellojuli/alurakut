@@ -1,3 +1,11 @@
+# Alurakut
+
+<p align="center">
+ <img  src="/login.png" alt="login" />
+ 
+ <img  src="/home.png" alt="home" />
+</p>
+
 ![GitHub](https://img.shields.io/github/license/hellojuli/Alurakut)
 # Next app with styled-components
 
